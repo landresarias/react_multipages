@@ -1,0 +1,71 @@
+How to deploy your project to GitHub
+You may have noticed that we haven't created any repositories on GitHub. So before we continue, 
+we need to have our project loaded there. Go to your GitHub account and create a repository 
+with the same name as the React project: ReactProject .
+
+☝️ Make sure you mark your repository as public. If you mark it as private, you won't be able 
+to use GitHub Pages. Let's add this repository as remote to our project. To do that, in the terminal, type:
+    >git init
+    >git add .
+    >git commit -m "first commit"
+    >git branch -M master
+    >git remote add origin https://github.com/Your_Account_Name/Your_Repository_Name.git
+    >git push --set-upstream origin master
+
+In order for us to upload our created app to GitHub Pages, we first need to install the 
+gh-pages package (in the terminal).
+
+    >npm add gh-pages
+
+This package will help us deploy our code to the gh-pages branch that will be used to host our 
+app on GitHub Pages.
+
+To allow us to use the gh-pages package correctly, we need to add two keys to the value of our 
+scripts in the package.json file:
+
+    "scripts": {
+        "start": "react-scripts start",
+        "predeploy": "npm run build", <----------- #1
+        "deploy": "gh-pages -d build", <---------- #2
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
+
+Next, we need to modify our package.json file by adding the home page field. React uses this 
+field to find out the root URL in the created HTML file . In it we will put the URL of our 
+GitHub repository .
+
+    {
+        "name": "starter-project",
+        "homepage": "https://Your_Account_Name.github.io/Your_Repository_Name/", <----
+        "version": "0.1.0",
+        /....
+    }
+
+To deploy our application, type the following in the terminal:
+
+    >npm run deploy
+
+Running the command above takes care of building your app and pushing it to a branch called 
+gh-pages, which GitHub uses to link to GitHub pages.
+
+? If you did not name your remote control as "origin", You will get an error duringg this phase  
+stating that: Failed to get remote.origin.url (task must either be run in a git repository with 
+a configured origin remote or must be configured with the "repo" option).
+
+You will know that the process was successful if at the end of it you see the word Published. 
+Now we can head to our GitHub repository in Settings and scroll down to the GitHub Pages section.
+
+GitHub  Pages
+GitHub Pages is designed to host your personal, organization, or project pages from a GitHub 
+repository.
+    Your site is published at https://Your_Account_Name.github.io/Your_Repository_Name/
+
+If you see a message similar to the above, it means that your app is now successfully hosted 
+on GitHub Pages.
+
+
+
+
+
