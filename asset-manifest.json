@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/react_multipages/static/css/main.52a4402c.css",
+    "main.js": "/react_multipages/static/js/main.628a191b.js",
+    "static/media/enchiladas.jpg": "/react_multipages/static/media/enchiladas.c8ba8648f60213559203.jpg",
+    "index.html": "/react_multipages/index.html",
+    "main.52a4402c.css.map": "/react_multipages/static/css/main.52a4402c.css.map",
+    "main.628a191b.js.map": "/react_multipages/static/js/main.628a191b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.52a4402c.css",
+    "static/js/main.628a191b.js"
+  ]
+}
